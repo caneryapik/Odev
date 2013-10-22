@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+	int sifre, money, secenek, degisken, toplam, fark;
+	char ad[15];
+	char kullanici2[15];
+	money=650;
+	printf("YAPIK KREDI BANKASI\n\n");
+	printf("Yapik Kredi Bankasi Bankamatigine Hosgeldiniz , islem yapabilmek icin lutfen sifrenizi giriniz.\n\n");
+	printf("Sifrenizi giriniz: ");
+	scanf("%d", &sifre);
+	if(sifre==134143)
+	
+	{
+	
+	printf("Hesabinizda %d TL para bulunmaktadir\n", money);
+	printf("Gerceklestirmek istediginiz islemi seciniz\n");
+	printf(" 1-Para yatirma \n 2-Para cekme \n 3-Para gonderme \n 4-Cikis \n");
+	scanf("%d", &secenek);
+	switch(secenek)
+
+	{
+
+	case 1:
+	
+		printf("Lutfen yatirmak istediginiz miktari giriniz = \n");
+		scanf("%d", &degisken);
+		toplam= money+degisken;
+		printf("Hesabinizda %d TL para bulunmaktadir \n",toplam);
+		break;
+		
+	case 2:
+		
+		printf("Cekmek istediginiz miktari giriniz = ");
+		scanf("%d", &degisken);
+		if(degisken<money)
+
+		{
+
+		fark = money - degisken;
+		printf("Hesabinizda %d TL para kalmiştir\n", fark);
+
+		}
+
+		else if(degisken>money)
+			printf("Yeteri miktarda paraniz bulunmamaktadir, lutfen cekeceginiz miktari tekrar giriniz.\n");
+		else
+			printf("Hesabinizda para bulunmamaktadir \n");
+		break;
+	
+	case 3:
+		
+		printf("Lutfen havale yapacaginiz kisinin adini giriniz: \n ");
+		scanf("%s", &kullanici2);
+		printf("%s adli kisiye para gondereceksiniz \n", kullanici2);
+		printf("Gondereceginiz para miktarini giriniz  ");
+		scanf("%d",&degisken);
+		if(degisken<money)
+
+		{
+
+		fark= money - degisken;
+		printf("Havale isleminiz tamamlanmistir, hesabinizda %d TL para kalmistir \n",fark);
+
+		}
+
+		else if(degisken>money)
+		printf("Yeteri miktarda paraniz bulunmamaktadir, lutfen cekeceginiz miktari tekrar giriniz.\n");
+		else
+			printf("Hesabinizda para kalmamistir , tum paranizi %s adli kisiye yolladiniz\n", kullanici2);
+		break;
+		
+	case 4:
+
+		printf("Isleminiz iptal edilmistir , kartinizi geri aliniz \n");
+		break;
+
+	default:
+		printf("1-2-3-4 rakamlarından birine tiklamaniz gerekmektedir \n");
+		break;
+		
+	}
+
+	}
+
+	else
+		printf("Yanlis sifre girdiniz lutfen tekrar deneyin \n");
+
+
+}
