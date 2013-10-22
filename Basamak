@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int sayi;
+int k,l,m,n,t;
+int main()
+
+{
+	printf("En Fazla 5 Haneli Bir Sayi Giriniz: ");
+	scanf("%d", &sayi);
+	if(sayi>99999) 
+
+	{
+		printf("Lutfen girdiginiz sayidan kucuk en fazla bes haneli bir sayi giriniz. \n");
+	scanf("%d", &sayi);
+	}
+
+	if(sayi >0 && sayi<=99999) 
+
+	{
+		k=sayi/10000;
+		l=(sayi-(k*10000))/1000;
+		m=(sayi-(k*10000)-(l*1000))/100;
+		n=(sayi-(k*10000)-(l*1000)-(m*100))/10;
+		t=(sayi-(k*10000)-(l*1000)-(m*100)-(n*10));
+		printf("\n Verilen %d sayisinda:",sayi);
+		printf("\n%d tane onbinlik",k);
+		printf("\n%d tane binlik",l);
+		printf("\n%d tane yuzluk",m);
+		printf("\n%d tane onluk",n);
+		printf("\n%d tane birlik vardir. \n",t);
+	}
+
+getch();
+return 0;
+}
